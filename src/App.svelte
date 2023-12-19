@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Overlay from "./lib/Overlay.svelte";
+  import Overlay from "./lib/overlay/Overlay.svelte";
 
   let isOpen: boolean = true;
   let doOpen: (bool?: boolean) => void;

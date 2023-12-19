@@ -1,7 +1,7 @@
 {
   "name": "jwe-svelte-comps",
-  "private": true,
-  "version": "0.1.0",
+  "private": false,
+  "version": "0.1.1",
   "type": "module",
   "files": [
     "dist"
@@ -29,5 +29,17 @@
   },
   "dependencies": {
     "@sveltejs/package": "^2.2.3"
-  }
+  },
+  "description": "This template should help get you started developing with Svelte and TypeScript in Vite.",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josiaheakle/jwe-svelte-comps.git"
+  },
+  "author": "Josiah Eakle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josiaheakle/jwe-svelte-comps/issues"
+  },
+  "homepage": "https://github.com/josiaheakle/jwe-svelte-comps#readme"
 }
