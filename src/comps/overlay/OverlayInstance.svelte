@@ -9,7 +9,9 @@
 		settings: OverlaySettings<P>
 		animationDuration: number
 	}
+
 	let { Comp, id, settings, animationDuration }: Props<any> = $props()
+	let lastInstanceId = $derived(Object.keys(OverlayController.instances).at(-1))
 
 	let isOpen = $state(false)
 
@@ -18,6 +20,14 @@
 		setTimeout(() => {
 			OverlayController.close(id)
 		}, animationDuration)
+	}
+
+	function handleKeydown(e: KeyboardEvent) {
+		console.log(id, lastInstanceId)
+		if (e.key === "Escape" && id === lastInstanceId) {
+			e.stopPropagation()
+			close()
+		}
 	}
 
 	onMount(() => (isOpen = true))
@@ -41,10 +51,11 @@
 		<Comp {...settings.props} />
 	</div>
 {/if}
+<svelte:window onkeydown={handleKeydown} />
 
 <style>
 	.overlay-instance {
-		position: relative;
+		position: absolute;
 
 		padding: var(--overlay-padding);
 		background-color: var(--overlay-background);

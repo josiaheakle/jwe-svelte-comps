@@ -4,8 +4,8 @@ import { v4 as uuid } from "uuid"
 export type OverlayId = string
 
 export type OverlaySettings<P> = {
-	props: P
-	className: string
+	props?: P
+	className?: string
 }
 
 type OverlayInstance<P extends Record<string, any>> = {
@@ -16,7 +16,10 @@ type OverlayInstance<P extends Record<string, any>> = {
 class OverlayCtrl {
 	instances: { [index: OverlayId]: OverlayInstance<any> } = $state({})
 
-	open = <P extends Record<string, any>>(component: Component<P>, settings: OverlaySettings<P>) => {
+	open = <P extends Record<string, any>>(
+		component: Component<P>,
+		settings: OverlaySettings<P> = {}
+	) => {
 		const id = uuid()
 		this.instances[id] = {
 			component: component,
