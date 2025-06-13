@@ -1,0 +1,24 @@
+{
+	"name": "jwe-svelte-comps",
+	"version": "1.0.0",
+	"description": "A svelte component library filled built by Josiah Eakle. ",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Josiah Eakle <josiah.eakle@luxedo.com>",
+	"license": "ISC",
+	"exports": {
+		"./*": "./src/*"
+	},
+	"files": [
+		"src"
+	],
+	"main": "src/index.js",
+	"svelte": "./src/index.js",
+	"devDependencies": {
+		"svelte": "^5.34.1",
+		"svelte-check": "^4.2.1",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.5"
+	}
+}
